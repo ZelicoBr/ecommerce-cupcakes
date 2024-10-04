@@ -39,9 +39,16 @@
                 <button type="submit">Atualizar Carrinho</button>
             </div>
             <div style="font-weight: bold; font-size: 1.2em; margin-top: 20px;">
-             Total: <span style="color: #e74c3c;">R$ {{ number_format(array_sum(array_map(fn($item) => $item['preco'] * $item['quantidade'], session('cart'))), 2, ',', '.') }}</span>
+                Total: <span style="color: #e74c3c;">R$ {{ number_format(array_sum(array_map(fn($item) => $item['preco'] * $item['quantidade'], session('cart'))), 2, ',', '.') }}</span>
             </div>
         </form>
+
+        <!-- Botão para finalizar o pedido -->
+        <form action="{{ route('checkout') }}" method="GET" style="margin-top: 20px;">
+            @csrf
+            <button type="submit" class="btn btn-success">Finalizar Pedido</button>
+        </form>
+
     @else
         <p>Seu carrinho está vazio.</p>
     @endif

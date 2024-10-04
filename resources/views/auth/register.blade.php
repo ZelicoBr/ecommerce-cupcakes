@@ -3,6 +3,18 @@
 @section('content')
     <div class="auth-container">
         <h2>Registrar-se</h2>
+
+        <!-- Exibir erros de validação -->
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="{{ route('register') }}" method="POST">
             @csrf
             <div>
