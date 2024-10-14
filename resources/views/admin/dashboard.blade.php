@@ -9,7 +9,6 @@
                 <ul>
                     <li><a href="{{ route('cupcakes.index') }}" class="btn">Gerenciar Cupcakes</a></li>
                     <li><a href="{{ route('admin.orders.index') }}" class="btn">Ver Pedidos</a></li>
-                    <li><a href="#" class="btn">Configurações</a></li>
                 </ul>
             </aside>
 
@@ -27,11 +26,6 @@
                         <h3>Pedidos</h3>
                         <p>Veja os pedidos feitos pelos clientes.</p>
                         <a href="{{ route('admin.orders.index') }}" class="btn">Ver Pedidos</a>
-                    </div>
-                    <div class="card">
-                        <h3>Configurações</h3>
-                        <p>Ajuste as configurações do site.</p>
-                        <a href="#" class="btn">Ver Configurações</a>
                     </div>
                 </div>
             </main>
